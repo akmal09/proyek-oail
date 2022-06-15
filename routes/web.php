@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AstrophotographyController;
+use App\Http\Controllers\StartAndInterstellarsMattersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome'); });
+
+Route::get('startandinster/create', [StartAndInterstellarsMattersController::class, 'create']);
+Route::post('startandinster/add',[StartAndInterstellarsMattersController::class, 'addImage']);
+
+
+Route::get('astrophotography/create', [AstrophotographyController::class, 'create']);
